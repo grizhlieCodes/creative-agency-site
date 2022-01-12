@@ -1,0 +1,18 @@
+//Reset all CSS
+@use './2-base/reset';
+
+//Import Utility classes and variables
+@use './1-helpers/variables';
+@use './1-helpers/utility-classes';
+@use './2-base/fonts';
+
+//Sections ( usually Layout related in bigger projects but we will mostly code
+//in these)
+@use './2-base/homepage';
+@use './3-sections/header';
+@use './3-sections/hero';
+@use './3-sections/main';
+@use './3-sections/footer';
+
+//Components (button for example)
+@use './4-components/button';

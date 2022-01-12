@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32"
+  href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/css/main.css">
+  <script defer src="./scripts/mobileMenu.js"></script>
   <title>Frontend Mentor | Creative single page site</title>
 </head>
 
@@ -16,14 +19,14 @@
     <header class="header">
 
       <div class="header__logo-container">
-        <img src="" alt="">
+        <img src="./images/desktop/logo.svg" alt="creative agency logo">
       </div>
 
-      <div class="header__mobile-menu-button">
+      <button class="header__mobile-menu-button">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
 
       <nav class="header__navigation">
         <a href="/about" class="header__link">
@@ -40,30 +43,168 @@
         </a>
       </nav>
 
-      <section class="hero">
-        <div class="img-container">
-          <img src="" alt="" class="hero__img">
-        </div>
-        <div class="hero__text-container">
-          <h1 class="hero__heading">
-            Branding & website design agency
-          </h1>
-          <p class="hero__description">
-            We specialize in visual storytelling by creating cohesive brand and website design solutions for small
-            businesses, giving lasting impressions to audiences in a digital world.
-          </p>
-          <button class="hero__cta button button--red button--large">
-            Learn More
-          </button>
-        </div>
-      </section>
-
-      <main class="main">
-        section.
-      </main>
-
+      
     </header>
+    
+    <section class="hero">
+      <div class="img-container">
+        <picture>
+          <!-- BIGGEST -> smallest -->
+          <source media="(min-width: 1200px)"
+          srcset="./images/desktop/image-hero.jpg">
+          <source media="(min-width: 768px)"
+          srcset="./images/tablet/image-hero.jpg">
+          <img src="./images/mobile/image-hero.jpg" alt="2 men working on
+          computers in a well lit office">
+        </picture>
+      </div>
+      <div class="hero__text-container">
+        <h1 class="hero__heading">
+          Branding & website design agency
+        </h1>
+        <p class="hero__description">
+          We specialize in visual storytelling by creating cohesive brand and website design solutions for small
+          businesses, giving lasting impressions to audiences in a digital world.
+        </p>
+        <button class="hero__cta button button--red button--large">
+          Learn More
+        </button>
+      </div>
+    </section>
+  
+    <main class="main">
+      <section class="strategy shared-main-grid">
+        <div class="strategy__img-container">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="./images/desktop/image-strategic.jpg">
+            <source media="(min-width: 768px)" srcset="./images/tablet/image-strategic.jpg">
+            <img src="./images/mobile/image-strategic.jpg" alt="birds eye shot
+            of someone working on a laptop with coffee and phone next to it">
+          </picture>
+        </div>
+        <div class="strategy__text-container">
+          <h2 class="strategy__heading">
+            <span class="section-heading strategy__heading--red">Design</span> is strategic.
+          </h2>
+          <blockquote class="strategy__quote">
+            <p>
+              “A well-crafted design strategy consistently produces desired outcomes and brand awareness. We are firm believers that success lies in creative collaboration with our clients.”
+            </p>
+          </blockquote>
+        </div>
+        <!-- red wave as ::before -->
+      </section>
+      <section class="approach shared-main-grid">
+        <h2 class="section-heading section-heading--black approach__heading">Our approach for
+        creating a winning brand</h2>
+  
+          <section class="approach__sub-section brand-strategy">
+            <h3 class="section-sub-heading approach__sub-heading">Brand Strategy</h3>
+            <p class="approach__sub-section-description">
+              Brand strategy is critical for long-term success. Outshining competitors and capturing the target audience are key.
+            </p>
+          </section>
+          <section class="approach__sub-section brand-design">
+            <h3 class="section-sub-heading approach__sub-heading">Brand Design</h3>
+            <p class="approach__sub-section-description">
+              Keeping the brand design unique and meaningful helps in communicating the brand’s timeless value effectively. 
+            </p>
+          </section>
+          <section class="approach__sub-section web-design">
+            <h3 class="section-sub-heading approach__sub-heading">Web Design</h3>
+            <p class="approach__sub-section-description">
+              A beautifully crafted website is the best tool for brand awareness, and ultimately results in increased revenues.
+            </p>
+          </section>
+        
+      </section>
+  
+      <section class="stories shared-main-grid">
+        <div class="stories__text-container">
+          <h2 class="section-heading section-heading--white active">
+            Brand naming & guidelines
+          </h2>
+          <h2 class="section-heading section-heading--white hidden">
+            Brand identity & merchandise
+          </h2>
+          <h2 class="section-heading section-heading--white hidden">
+            Brand identity & web design
+          </h2>
+          <div class="stories__carousel-buttons">
+            <button class="carousel-button previous">
+              <img src="./images/desktop/icon-arrow-previous.svg" alt="arrow
+              pointing left">
+            </button>
+            <button class="carousel-button next">
+              <img src="./images/desktop/icon-arrow-next.svg" alt="arrow
+              pointing right">
+            </button>
+          </div>
+        </div>
+  
+        <div class="stories__image-carousel active">
+  
+          <div class="stories__image-container active">
+            <picture class="stories__image">
+              <source media="(min-width: 1200px)" srcset="./images/desktop/image-slide-1.jpg">
+              <source media="(min-width: 768px)" srcset="./images/tablet/image-slide-1.jpg">
+              <img src="./images/mobile/image-slide-1.jpg" alt="book page
+              showing a circular path that symbolises a product roadmap">
+            </picture>
+            <div class="stories__image-text">
+              <h3 class="stories__heading section-sub-heading">
+                Lean Product Roadmap
+              </h3>
+              <span class="stories__project-date">2019 Project</span>
+            </div>
+          </div>
+  
+          <div class="stories__image-container hidden">
+            <picture class="stories__image">
+              <source media="(min-width: 1200px)" srcset="./images/desktop/image-slide-2.jpg">
+              <source media="(min-width: 768px)" srcset="./images/tablet/image-slide-2.jpg">
+              <img src="./images/mobile/image-slide-2.jpg" alt="bird eye shot
+              of branded merchandise - bag and pencil">
+            </picture>
+            <div class="stories__image-text">
+              <h3 class="stories__heading section-sub-heading">
+                New Majestic Hotel
+              </h3>
+              <span class="stories__project-date">2018 Project</span>
+            </div>
+          </div>
+  
+          <div class="stories__image-container hidden">
+            <picture class="stories__image">
+              <source media="(min-width: 1200px)" srcset="./images/desktop/image-slide-3.jpg">
+              <source media="(min-width: 768px)" srcset="./images/tablet/image-slide-3.jpg">
+              <img src="./images/mobile/image-slide-3.jpg" alt="dashboard for
+              a crypto currency application">
+            </picture>
+            <div class="stories__image-text">
+              <h3 class="stories__heading section-sub-heading">
+                Crypto Dashboard
+              </h3>
+              <span class="stories__project-date">2016 Project</span>
+            </div>
+          </div>
+  
+        </div>
+  
+        <!-- white wave as ::before -->
+      </section>
+  
+    </main>
 
+    <footer class="footer">
+      <h2 class="section-heading footer__heading">
+        Let's build something great together.
+      </h2>
+      <button class="footer__cta button button--red button--small">
+        Schedule a Call
+      </button>
+      <!-- Use ::before for wavy line -->
+    </footer>
   </div>
 
 

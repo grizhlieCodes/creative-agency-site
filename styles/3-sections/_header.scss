@@ -1,0 +1,149 @@
+@use "../1-helpers/mixins" as *;
+
+.header {
+  width: 100%;
+  height: auto;
+//   padding: 4rem 2.4rem;
+//   @include flex(0, space-between, 0);
+  display: grid;
+  grid-template-rows: 4rem 1fr 4rem;
+  grid-template-columns: 2.4rem max-content 1fr 2.4rem;
+  grid-template-areas: 
+    ". . . ."
+    ". logo nav ."
+    ". . . ."
+  ;
+  align-items: center;
+  position: relative;
+
+  @include mq(tablet) {
+
+    grid-template-columns: 4rem 29.1rem 6rem 1fr 4rem; 
+    grid-template-rows: 5.7rem max-content 5.7rem;
+    grid-template-areas: 
+    ". . . . ."
+    ". logo nav nav ."
+    ". . . . .";
+        
+      &::before {
+          grid-column: 3/6;
+          grid-row: 1/4;
+          content: '';
+          width: 100%;
+          height: 100%;
+          background: v(red);
+      }
+  }
+
+  &__logo-container {
+    grid-area: logo;
+    height: 3.1rem;
+  }
+
+  &__mobile-menu-button {
+    grid-area: nav;
+    width: 2.4rem;
+    height: 1.8rem;
+    @include flex(column nowrap, space-between, center);
+    cursor: pointer;
+
+    &:focus-within {
+      outline: 0.1rem solid v(red);
+      outline-offset: 0.2rem;
+    }
+
+    > span {
+      width: 100%;
+      height: 0.2rem;
+      background: #979797;
+      display: block;
+      transition: transform 250ms, opacity 250ms;
+      transform-origin: 1px 1px;
+    }
+
+    &.active > span {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: scale(0.1);
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &.active ~ nav {
+      transform: translate(0) scale(1);
+      opacity: 1;
+    }
+
+    @include mq(tablet){
+        display: none;
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    top: 100%;
+    right: 2.4rem;
+    transform: translate(0, -5rem) scale(0);
+    transform-origin: top right;
+    transition: transform 250ms, opacity 250ms;
+    opacity: 0;
+    padding: 3.2rem 2.7rem 2.8rem;
+    background: v(bg-dark);
+    @include flex(column nowrap, flex-start, 0);
+    gap: 2.4rem;
+
+    @include mq(tablet){
+        justify-self: end;
+        grid-area: nav;
+        position: relative;
+        opacity: 1;
+        transform: none;
+        flex-flow: row nowrap;
+        padding: 0;
+        top: unset;
+        right: unset;
+        background: none;
+        gap: 2rem;
+    }
+
+  }
+
+
+
+  &__link {
+    color: v(text-light);
+    transition: all 250ms;
+    outline: none;
+
+    &:not(.header__link--cta) {
+      line-height: 3.2rem;
+      font-size: 1.8rem;
+
+      &:hover,
+      &:focus-within {
+        font-weight: 600;
+        color: v(text-light);
+        outline: 0.2rem v(text-light) solid;
+        outline-offset: 0.4rem; 
+      }
+
+    }
+
+    &--cta {
+      background: v(red);
+      padding: 2.3rem 4.4rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+
+      @include mq(tablet) {
+          background: v(bg-dark);
+          margin-left: 0.8rem;
+      }
+    }
+  }
+}

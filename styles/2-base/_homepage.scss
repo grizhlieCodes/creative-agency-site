@@ -1,0 +1,19 @@
+@use "../1-helpers/mixins" as *;
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  // display: flex;
+  // flex-flow: column nowrap;
+  @include flex(column nowrap, 0, 0);
+
+  & > .wrapper {
+    width: 100%;
+    max-width: 144rem;
+    height: auto;
+    // display: flex;
+    // flex-flow: column nowrap;
+    @include flex(column nowrap, 0, 0);
+  }
+}

@@ -1,0 +1,13 @@
+@use './mixins' as *;
+
+//Colors
+html {
+    --red: #F94F4F;
+    --black: #000000;
+    --near-black: #191921;
+    --white: #ffffff;
+    --text-dark: var(--near-black);
+    --text-light: var(--white);
+    --bg-light: var(--white);
+    --bg-dark: var(--near-black);
+}
