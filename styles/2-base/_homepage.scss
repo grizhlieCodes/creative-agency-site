@@ -3,7 +3,7 @@
 body {
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   // display: flex;
   // flex-flow: column nowrap;
   @include flex(column nowrap, 0, 0);
@@ -15,5 +15,17 @@ body {
     // display: flex;
     // flex-flow: column nowrap;
     @include flex(column nowrap, 0, 0);
+  }
+}
+
+.wrapper > * {
+  display: grid;
+  grid-template-columns: 2.4rem max-content 1fr 2.4rem;
+  align-items: center;
+
+  @include mq(tablet) {
+    grid-template-columns:
+      minmax(4rem, 1fr) 16.1rem
+      minmax(13rem, 21.9rem) minmax(6rem, 19rem) minmax(33.8rem, 54rem) minmax(4rem, 1fr);
   }
 }

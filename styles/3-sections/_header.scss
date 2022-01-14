@@ -6,7 +6,7 @@
   //   @include flex(0, space-between, 0);
   display: grid;
   grid-template-rows: 4rem max-content 4rem;
-  grid-template-columns: 2.4rem max-content 1fr 2.4rem;
+  // grid-template-columns: 2.4rem max-content 1fr 2.4rem;
   grid-template-areas:
     ". . . ."
     ". logo nav ."
@@ -15,9 +15,9 @@
   position: relative;
 
   @include mq(tablet) {
-    grid-template-columns:
-      minmax(4rem, 1fr) max-content
-      minmax(13rem, 21.9rem) minmax(6rem, 19rem) minmax(33.8rem, 54rem) minmax(4rem, 1fr);
+    // grid-template-columns:
+    //   minmax(4rem, 1fr) max-content
+    //   minmax(13rem, 21.9rem) minmax(6rem, 19rem) minmax(33.8rem, 54rem) minmax(4rem, 1fr);
     grid-template-rows: 5.7rem max-content 5.7rem;
     grid-template-areas:
       ". . . . . ."
