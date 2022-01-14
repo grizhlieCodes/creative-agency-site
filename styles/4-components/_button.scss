@@ -1,0 +1,19 @@
+@use '../1-helpers/mixins' as *;
+
+.button {
+    width: max-content;
+    padding: 2.5rem 4rem;
+    font-weight: 800;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background 250ms, color 250ms;
+
+    &--red {
+        background: v(red);
+        color: white;
+
+        &:hover {
+            background: #FF9393;
+        }
+    }
+}
